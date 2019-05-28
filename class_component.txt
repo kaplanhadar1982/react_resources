@@ -1,0 +1,14 @@
+import React, { Component } from 'react';
+
+
+class Playground extends Component {
+    render(){
+        return (
+            <div className="Approval">
+                
+            </div>
+        );
+    }
+};
+
+export default Playground;
