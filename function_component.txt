@@ -1,7 +1,12 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './App.css';
 
 function App() {
+  useEffect(()=>{
+		//every change,
+		// can call http
+	});
+	
   return (
     <div className="App">
      
@@ -17,11 +22,16 @@ export default App;
 
 //op 2
 
-import React from 'react';
+import React,{useEffect} from 'react';
 
 import classes from './Backdrop.css';
 
 const backdrop = (props) => (
+	useEffect(()=>{
+		//every change,
+		// can call http
+	});
+	
     props.show ? <div className={classes.Backdrop}>&nbsp;</div> : null
 );
 
