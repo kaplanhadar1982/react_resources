@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 
 
 class Playground extends Component {
+	constructor(props) {
+		super(props);
+		//do : update state
+		//dont : side effect(http)
+	  }
+
+	componentDidMount() {
+		//do:http call, in then block you can update state
+		//dont: update state without then block
+	  }
+	
     render(){
         return (
             <div className="Approval">
