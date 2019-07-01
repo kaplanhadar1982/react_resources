@@ -1,0 +1,50 @@
+import React, { Component } from 'react';
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import { StylesProvider, jssPreset } from '@material-ui/styles';
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+
+
+const materialStyle = ( WrappedComponent) => {
+  // Configure JSS
+    const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+
+    const theme = createMuiTheme({
+      direction: "rtl",
+      typography: {
+        fontFamily: ["Open Sans Hebrew"].join(","),
+        fontSize: 14
+      },
+      palette: {
+        primary: {
+          main: "#0D47A1"
+        },
+        secondary: {
+          main: "#757575"
+        },
+        error: {
+          main: "#DF0100"
+        }
+      }
+    });
+
+    return class extends Component {
+        render () {
+            return (
+                <MuiThemeProvider theme={theme}>
+                    <StylesProvider jss={jss}>
+                        <WrappedComponent {...this.props} />
+                    </StylesProvider>
+                </MuiThemeProvider>
+            );
+        }
+    }
+}
+
+export default materialStyle;
+
+
+
+use:
+export default materialStyle(App);
